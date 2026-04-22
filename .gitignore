@@ -1,0 +1,27 @@
+# --- System Files ---
+.DS_Store
+Thumbs.db
+*.swp
+
+# --- IDE / Editor Files ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- Environment & Secrets ---
+.env
+.env.local
+.venv/
+env/
+venv/
+
+# --- Node / JavaScript ---
+node_modules/
+dist/
+build/
+.npm
+.next/
+
+# --- Python ---
+__pycache__/
