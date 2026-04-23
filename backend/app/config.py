@@ -1,8 +1,4 @@
-# a Pydantic BaseSettings class with fields matching your .env.example. 
-# Set model_config to read from .env. 
-# Give sensible defaults: app_env = "development", 
-# frontend_url = "http://localhost:3000", 
-# empty strings for the Supabase/Gemini keys (they're not needed yet).
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
