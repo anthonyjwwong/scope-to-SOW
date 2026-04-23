@@ -1,0 +1,9 @@
+[project]
+name = "scope-to-sow-backend"
+version = "0.1.0"
+description = "Backend for Scope-to-SOW"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
