@@ -2,7 +2,7 @@
 
 import apiFetch from "@/lib/api";
 import { useEffect, useState } from "react";
-
+import MeTest from "@/components/me-test";
 type HealthResponse = {
   status: string;
   version: string;
@@ -31,7 +31,7 @@ export default function Home() {
 
   return (
     <div>
-      {isLoading && <div>Loading...</div>}
+      {/* {isLoading && <div>Loading...</div>}
 
       {!isLoading && error && (
         <div className="text-red-600">
@@ -47,7 +47,8 @@ export default function Home() {
           <p>Version: {health.version}</p>
           <p>Environment: {health.environment}</p>
         </div>
-      )}
+      )} */}
+      <MeTest />
     </div>
   );
 }

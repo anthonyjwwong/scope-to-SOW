@@ -1,7 +1,15 @@
+import { createClient } from "./supabase";
+
 export default async function apiFetch<T>(
   path: string,
   options: RequestInit = {},
 ): Promise<T> {
+  const supabase = createClient();
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+  console.log("Session:", session);
+  console.log("Token:", session?.access_token?.substring(0, 20));
   const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
   if (!baseUrl) {
@@ -12,7 +20,10 @@ export default async function apiFetch<T>(
     ...options,
     headers: {
       "Content-Type": "application/json",
-      ...(options.headers ?? {}),
+      ...(session?.access_token && {
+        Authorization: `Bearer ${session.access_token}`,
+      }),
+      ...options?.headers,
     },
   });
 
