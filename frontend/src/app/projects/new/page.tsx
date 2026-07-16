@@ -39,7 +39,9 @@ export default function Page() {
         value={transcript}
         onChange={(e) => setTranscript(e.target.value)}
       />
-      <button onClick={handleAnalyze}>Analyze</button>
+      <button onClick={handleAnalyze} disabled={isLoading}>
+        {isLoading ? "Analyzing..." : "Analyze"}
+      </button>
     </div>
   );
 }
